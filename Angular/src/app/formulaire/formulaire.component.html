@@ -1,0 +1,52 @@
+<h1>{{ formulaire }}</h1>
+<form (submit)="onSubmit()" class="container">
+  <label>
+    <div>Nom :</div>
+    <input
+      type="text"
+      [(ngModel)]="nom"
+      name="nom"
+      required
+      placeholder="Entrez votre nom"
+    />
+  </label>
+  <br />
+  <label>
+    <div>Prénom :</div>
+    <input
+      type="text"
+      [(ngModel)]="prenom"
+      name="prenom"
+      required
+      placeholder="Entrez votre prénom"
+    />
+  </label>
+  <br />
+  <button type="submit">Envoyer</button>
+</form>
+
+<div class="container">
+  <button (click)="recupererNomsPrenoms()" type="button">
+    Récupérer les noms et prénoms
+  </button>
+
+  <ul>
+    <li *ngFor="let np of nomsPrenoms">{{ np.id }} {{ np.nom }} {{ np.prenom }}</li>
+  </ul>
+</div>
+
+<form #formSupprimerLigne="ngForm" (ngSubmit)="supprimerLigne(formSupprimerLigne.value.id)" class="container">
+    <label>
+      <div>ID :</div>
+      <input
+        type="number"
+        ngModel
+        name="id"
+        required
+        placeholder="Entrez l'ID à supprimer"
+      />
+    </label>
+    <br />
+    <button type="submit">Supprimer</button>
+  </form>
+  

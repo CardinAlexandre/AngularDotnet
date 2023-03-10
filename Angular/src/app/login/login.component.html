@@ -1,0 +1,31 @@
+<!-- Formulaire de connexion -->
+<h1>{{ loginTitle }}</h1>
+<form (ngSubmit)="onLoginSubmit()" class="container">
+  <div>
+    <label for="username">Nom d'utilisateur :</label>
+    <input type="text" id="username" [(ngModel)]="username" name="username">
+  </div>
+  <div>
+    <label for="password">Mot de passe :</label>
+    <input type="password" id="password" [(ngModel)]="password" name="password">
+  </div>
+  <button type="submit">Se connecter</button>
+</form>
+
+<!-- Formulaire de création de compte -->
+<h1>Créer un nouveau compte</h1>
+<form (ngSubmit)="onNewUserSubmit()" class="container">
+  <div>
+    <label for="new-username">Nom d'utilisateur :</label>
+    <input type="text" id="new-username" [(ngModel)]="newUsername" name="newUsername">
+  </div>
+  <div>
+    <label for="new-password">Mot de passe :</label>
+    <input type="password" id="new-password" [(ngModel)]="newPassword" name="newPassword">
+  </div>
+  <div>
+    <label for="email">Email :</label>
+    <input type="email" id="email" [(ngModel)]="email" name="email">
+  </div>
+  <button type="submit">Créer un compte</button>
+</form>
